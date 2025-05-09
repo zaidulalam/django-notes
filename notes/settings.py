@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-7!l4=s=zhr$kb2@%sa#pxm!cqhq@slh8%m_hcp-l%1v-jf4e6j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["5b6bb6c1.uqcloud.net", "infs3202-5b6bb6c1.uqcloud.net"]
+ALLOWED_HOSTS = ["5b6bb6c1.uqcloud.net", "ec2-3-83-156-208.compute-1.amazonaws.com"]
 
-CSRF_TRUSTED_ORIGINS = ["https://5b6bb6c1.uqcloud.net", "https://infs3202-5b6bb6c1.uqcloud.net"]
+CSRF_TRUSTED_ORIGINS = ["https://5b6bb6c1.uqcloud.net", "https://ec2-3-83-156-208.compute-1.amazonaws.com"]
 
 # Application definition
 
