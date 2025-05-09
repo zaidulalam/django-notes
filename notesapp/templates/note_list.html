@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}All Notes{% endblock %}
+
+{% block content %}
+<h1 class="mb-3">All Notes</h1>
+
+{% if notes %}
+    <div class="row row-cols-1 g-3">
+        {% for note in notes %}
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ note.title }}</h5>
+                    {% if note.body %}
+                    <p class="card-text">{{ note.body|linebreaksbr }}</p>
+                    {% endif %}
+                    <a href="{% url 'notes:edit' note.pk %}" class="btn btn-sm btn-outline-primary">Edit</a>
+                    <a href="{% url 'notes:delete' note.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                </div>
+                <div class="card-footer text-muted small">
+                    {{ note.created_at|date:"Y-m-d H:i" }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No notes yet. <a href="{% url 'notes:add' %}">Create your first note</a>.</p>
+{% endif %}
+{% endblock %}
